@@ -170,8 +170,8 @@
             this.$parent.onTemplateChange();
           }, 200),
           onClick(event) {
-            // Prevent the click action if it's already handled by another event
-            if (!data.clickAction || event._handled) {
+            // Prevent the click action if it's already handled by another event or is a anchor link
+            if (!data.clickAction || event._handled || event.target.tagName === 'A') {
               return;
             }
 
